@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #090D16;
+    color: #F3F4F6;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Custom Utilities & Glassmorphism */
+.glass-panel {
+  background: rgba(22, 31, 51, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(22, 31, 51, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 242, 254, 0.25);
+  box-shadow: 0 0 30px -5px rgba(0, 242, 254, 0.15);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #00F2FE 0%, #4FACFE 50%, #7928CA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-fire {
+  background: linear-gradient(135deg, #FF4E50 0%, #F9D423 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 0%, rgba(0, 242, 254, 0.12) 0%, rgba(121, 40, 202, 0.05) 50%, transparent 80%);
+}
+
+/* Custom Scrollbar for Phone UI */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090D16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F293D;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00F2FE;
+}
+
+/* Pulse Glow Animation */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
