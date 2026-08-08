@@ -176,7 +176,7 @@ module.exports = router;`,
 
 export const MOCK_TESTIMONIALS = [
   {
-    name: 'Annu Kumari',
+    name: 'Amisha Gupta',
     college: 'ABES Engineering College',
     placedAt: 'Landed ₹20 LPA Software Engineer Role at Tech Unicorn',
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80',
@@ -188,6 +188,20 @@ export const MOCK_TESTIMONIALS = [
     placedAt: 'Founder of DMSTARS -A Bakery Startup.',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
     quote: 'Building a startup while managing college was not easy, but every small step forward reminded me why I started. Discipline turned my ideas into action.'
+  },
+  {
+    name: 'Gaurav Kumar',
+    college: 'ABES Engineering College',
+    placedAt: 'Landed ₹15 LPA Software Engineer Role at Tech Unicorn',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
+    quote: 'The ABTalks 60-day challenge was a game-changer for me. I went from having no projects to showcasing 5 real-world applications on my GitHub. The daily tasks kept me accountable, and the community support was incredible.'
+  },
+  {
+    name: 'Aman Gurnani',
+    college: 'ABES Engineering College',
+    placedAt: 'Landed ₹12 LPA Software Engineer Role at Tech Unicorn',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
+    quote: 'The ABTalks 60-day challenge helped me build a strong foundation in full-stack development. The daily tasks were challenging but rewarding, and the feedback from mentors was invaluable. I now feel confident in my skills and ready to take on real-world projects.'
   }
 ];
 
