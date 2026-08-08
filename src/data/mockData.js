@@ -192,7 +192,7 @@ export const MOCK_TESTIMONIALS = [
   {
     name: 'Gaurav Kumar',
     college: 'ABES Engineering College',
-    placedAt: 'Landed ₹15 LPA Software Engineer Role at Tech Unicorn',
+    placedAt: 'Landed ₹24 LPA Software Engineer Role at Tech Unicorn',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
     quote: 'The ABTalks 60-day challenge was a game-changer for me. I went from having no projects to showcasing 5 real-world applications on my GitHub. The daily tasks kept me accountable, and the community support was incredible.'
   },

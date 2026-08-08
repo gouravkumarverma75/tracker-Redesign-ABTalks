@@ -523,7 +523,7 @@ module.exports = router;`}
 
             <div className="p-3 rounded-md bg-surface-2 border border-hairline space-y-2 opacity-80">
               <div className="flex items-center justify-between">
-                <span className="font-medium text-ink">Gaurav Kumar • Landed ₹20 LPA</span>
+                <span className="font-medium text-ink">Gaurav Kumar • Landed ₹24 LPA</span>
                 <span className="text-semantic-success font-mono text-[11px]">✓ Placed at Unicorn</span>
               </div>
               <p className="text-[11px] text-ink-muted">
