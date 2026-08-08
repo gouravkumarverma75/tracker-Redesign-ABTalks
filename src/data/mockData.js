@@ -7,7 +7,7 @@ export const MOCK_TRACKS = [
     tagline: 'React, Node.js, PostgreSQL, Docker & System Design',
     color: 'from-cyan-500 to-blue-600',
     icon: 'Code2',
-    enrolledCount: '3,420 students',
+    enrolledCount: '2,476 students',
     prereq: 'Basic JavaScript knowledge'
   },
   {
@@ -16,7 +16,7 @@ export const MOCK_TRACKS = [
     tagline: 'Python, PyTorch, RAG Systems, Fine-Tuning & LLMs',
     color: 'from-purple-500 to-pink-600',
     icon: 'Brain',
-    enrolledCount: '1,850 students',
+    enrolledCount: '2,350 students',
     prereq: 'Basic Python & Algebra'
   },
   {
@@ -25,30 +25,30 @@ export const MOCK_TRACKS = [
     tagline: 'React Native, Expo, Firebase & Mobile Architecture',
     color: 'from-emerald-500 to-teal-600',
     icon: 'Smartphone',
-    enrolledCount: '1,120 students',
+    enrolledCount: '3,420 students',
     prereq: 'Basic React or JS'
   }
 ];
 
 export const MOCK_STUDENT_PRESETS = {
   active: {
-    name: 'Aarav Sharma',
-    college: 'VTU Bengaluru',
-    degree: 'B.Tech CSE (3rd Year)',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    name: 'Divyanshu Maurya',
+    college: 'ABES Engineering College',
+    degree: 'B.Tech CSE DS(2nd Year)',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
     trackId: 'fullstack',
     trackName: 'Full-Stack Web Engineering',
     currentStreak: 12,
     longestStreak: 12,
     completedDaysCount: 12,
     currentDayNumber: 12,
-    xpPoints: 1450,
-    rank: 14,
-    totalStudentsInCollege: 340,
+    xpPoints: 1550,
+    rank: 10,
+    totalStudentsInCollege: 370,
     freezeCreditsLeft: 1,
     missedDay: false,
-    githubUsername: 'aarav-codes-dev',
-    linkedinHandle: 'in/aarav-sharma-tech',
+    githubUsername: 'DM-codes-dev',
+    linkedinHandle: 'in/divyanshu-maurya-tech',
     achievements: [
       { id: 1, title: '7-Day Iron Streak', icon: 'Flame', desc: 'Completed 7 consecutive days of proof of work' },
       { id: 2, title: 'First Open Source Push', icon: 'GitPullRequest', desc: 'Submitted valid public GitHub commit' },
@@ -56,9 +56,9 @@ export const MOCK_STUDENT_PRESETS = {
     ]
   },
   day1_newbie: {
-    name: 'Riya Patel',
-    college: 'AKTU Lucknow',
-    degree: 'B.Tech IT (2nd Year)',
+    name: 'Aman Gurnani',
+    college: 'ABES Engineering College',
+    degree: 'B.Tech CSE DS(2nd Year)',
     avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80',
     trackId: 'fullstack',
     trackName: 'Full-Stack Web Engineering',
@@ -67,7 +67,7 @@ export const MOCK_STUDENT_PRESETS = {
     completedDaysCount: 0,
     currentDayNumber: 1,
     xpPoints: 50,
-    rank: 182,
+    rank: 192,
     totalStudentsInCollege: 210,
     freezeCreditsLeft: 2,
     missedDay: false,
@@ -76,9 +76,9 @@ export const MOCK_STUDENT_PRESETS = {
     achievements: []
   },
   missed_day: {
-    name: 'Karan Verma',
-    college: 'Anna University Chennai',
-    degree: 'B.E. ECE (4th Year)',
+    name: 'Gaurav kumar',
+    college: 'ABES Engineering College',
+    degree: 'B.Tech CSE DS(2nd Year)',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
     trackId: 'fullstack',
     trackName: 'Full-Stack Web Engineering',
@@ -86,14 +86,14 @@ export const MOCK_STUDENT_PRESETS = {
     longestStreak: 8,
     completedDaysCount: 8,
     currentDayNumber: 10,
-    xpPoints: 920,
-    rank: 45,
+    xpPoints: 990,
+    rank: 35,
     totalStudentsInCollege: 290,
     freezeCreditsLeft: 0,
     missedDay: true,
     missedDayNum: 9,
-    githubUsername: 'karanv-dev',
-    linkedinHandle: 'in/karan-verma-eng',
+    githubUsername: 'GK-codes-dev',
+    linkedinHandle: 'in/gaurav-kumar-eng',
     achievements: [
       { id: 1, title: '7-Day Iron Streak', icon: 'Flame', desc: 'Completed 7 consecutive days' }
     ]
@@ -166,8 +166,8 @@ module.exports = router;`,
   ],
   previousSubmissions: [
     {
-      githubUrl: 'https://github.com/aarav-codes-dev/abtalks-60day/commit/8f2a1b9',
-      linkedinUrl: 'https://linkedin.com/posts/aarav-sharma-day11-proof',
+      githubUrl: 'https://github.com/DM-codes-dev/abtalks-60day/commit/8f2a1b9',
+      linkedinUrl: 'https://linkedin.com/posts/divyanshu-maurya-day11-proof',
       submittedAt: 'Yesterday, 11:42 PM',
       status: 'VERIFIED'
     }
@@ -176,18 +176,18 @@ module.exports = router;`,
 
 export const MOCK_TESTIMONIALS = [
   {
-    name: 'Ananya Roy',
-    college: 'RTU Kota',
-    placedAt: 'Landed ₹14 LPA Software Engineer Role at Tech Unicorn',
+    name: 'Annu Kumari',
+    college: 'ABES Engineering College',
+    placedAt: 'Landed ₹20 LPA Software Engineer Role at Tech Unicorn',
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80',
     quote: 'Before ABTalks 60-day challenge, my GitHub was completely empty and recruiters ignored my resume. Building daily for 60 days gave me 6 real projects and 60 public proof of work posts. A founder DM’d me directly on LinkedIn!'
   },
   {
-    name: 'Siddharth Nair',
-    college: 'VTU Belagavi',
-    placedAt: 'SDE Intern at Fast-Growing AI Startup',
+    name: 'Divyanshu Maurya',
+    college: 'ABES Engineering College',
+    placedAt: 'Founder of DMSTARS -A Bakery Startup.',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-    quote: 'Coding late at night after college lectures was tough, but seeing my streak flame rise every day kept me going. The daily LinkedIn proof-of-work habit changed my discipline completely.'
+    quote: 'Building a startup while managing college was not easy, but every small step forward reminded me why I started. Discipline turned my ideas into action.'
   }
 ];
 
@@ -203,5 +203,13 @@ export const MOCK_FAQS = [
   {
     q: 'Is this really free?',
     a: 'Yes, 100% free for Indian college students. Our mission at ABTalks is to help developers from Tier 1, 2, and 3 colleges get visible to top recruiters through proof of work.'
+  },
+  {
+    q: 'Will I build real projects?',
+    a: 'Yes. You’ll work on practical projects that help you apply what you learn and strengthen your portfolio.'
+  },
+  {
+    q: 'Will I get a certificate after completing the course?',
+    a: 'yes, you will receive a certificate of completion after successfully finishing the 60-day challenge, which can be added to your LinkedIn profile and resume.'
   }
 ];

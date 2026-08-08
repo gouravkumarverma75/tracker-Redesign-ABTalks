@@ -7,29 +7,67 @@ export default {
   theme: {
     extend: {
       colors: {
+        canvas: '#010102',
+        surface: {
+          1: '#08090d',
+          2: '#121318',
+          3: '#1a1b22',
+          4: '#23252a',
+        },
+        hairline: {
+          DEFAULT: '#23252a',
+          strong: '#32353d',
+          tertiary: '#1c1d22',
+        },
+        primary: {
+          DEFAULT: '#5e6ad2',
+          hover: '#828fff',
+          focus: '#5e69d1',
+        },
         brand: {
-          dark: '#0B0F19',
-          card: '#161F33',
-          border: '#2A3654',
-          accent: '#00F2FE',
-          purple: '#7928CA',
-          pink: '#FF0080',
-          success: '#10B981',
-          warning: '#F59E0B',
-          danger: '#EF4444'
-        }
+          secure: '#7a7fad',
+        },
+        semantic: {
+          success: '#27a644',
+          overlay: 'rgba(0, 0, 0, 0.8)',
+        },
+        ink: {
+          DEFAULT: '#f7f8f8',
+          muted: '#d0d6e0',
+          subtle: '#8a8f98',
+          tertiary: '#62666d',
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Outfit', 'sans-serif'],
-        mono: ['Fira Code', 'JetBrains Mono', 'monospace']
+        sans: ['Inter', 'SF Pro Display', '-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'sans-serif'],
+        display: ['SF Pro Display', 'Inter', '-apple-system', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'SF Mono', 'Menlo', 'ui-monospace', 'monospace'],
+      },
+      borderRadius: {
+        'xs': '4px',
+        'sm': '6px',
+        'md': '8px',
+        'lg': '12px',
+        'xl': '16px',
+        'xxl': '24px',
+      },
+      letterSpacing: {
+        'display-xl': '-3px',
+        'display-lg': '-1.8px',
+        'display-md': '-1.0px',
+        'headline': '-0.6px',
+        'card-title': '-0.4px',
+        'subhead': '-0.2px',
+        'body-lg': '-0.1px',
+        'body': '-0.05px',
+        'eyebrow': '0.4px',
       },
       boxShadow: {
-        'glow-cyan': '0 0 25px -5px rgba(0, 242, 254, 0.3)',
-        'glow-purple': '0 0 25px -5px rgba(121, 40, 202, 0.4)',
-        'glow-emerald': '0 0 25px -5px rgba(16, 185, 129, 0.4)'
+        'surface-lift': '0 1px 2px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.05)',
+        'primary-focus': '0 0 0 2px rgba(94, 105, 209, 0.5)',
       }
     },
   },
   plugins: [],
 }
+

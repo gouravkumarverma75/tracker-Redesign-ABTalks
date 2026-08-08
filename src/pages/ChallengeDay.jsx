@@ -15,17 +15,19 @@ import {
   AlertCircle, 
   ShieldCheck, 
   ExternalLink,
-  Flame
+  Flame,
+  Terminal,
+  Code2
 } from 'lucide-react';
 import { MOCK_DAY_12_TASK } from '../data/mockData';
 
-export default function ChallengeDay({ dayNum, onNavigate, onCompleteDay }) {
+export default function ChallengeDay({ dayNum, onNavigate, onCompleteDay, studentState }) {
   const currentDay = parseInt(dayNum) || 12;
   const task = MOCK_DAY_12_TASK;
 
-  const [githubUrl, setGithubUrl] = useState('https://github.com/aarav-codes-dev/abtalks-60day/commit/8f2a1b9');
-  const [linkedinUrl, setLinkedinUrl] = useState('https://linkedin.com/posts/aarav-sharma-day12-proof');
-  const [reflection, setReflection] = useState('Built controller middleware for Express and tested with ThunderClient!');
+  const [githubUrl, setGithubUrl] = useState('https://github.com/DM-codes-dev/abtalks-60day/commit/8f2a1b9');
+  const [linkedinUrl, setLinkedinUrl] = useState('https://linkedin.com/posts/divyanshu-maurya-day12-proof');
+  const [reflection, setReflection] = useState('Built controller middleware for Express and tested endpoints with ThunderClient!');
   
   const [copiedCode, setCopiedCode] = useState(false);
   const [showHints, setShowHints] = useState(false);
@@ -73,7 +75,7 @@ export default function ChallengeDay({ dayNum, onNavigate, onCompleteDay }) {
           msg: 'Validation Failed: URLs must start with github.com and linkedin.com.'
         });
       }
-    }, 1200);
+    }, 1000);
   };
 
   // Handle Proof of Work Submission
@@ -97,34 +99,34 @@ export default function ChallengeDay({ dayNum, onNavigate, onCompleteDay }) {
   };
 
   return (
-    <div className="flex-1 flex flex-col bg-[#090D16] text-white p-4 space-y-4">
+    <div className="flex-1 flex flex-col space-y-6">
       
-      {/* Top Header & Day Navigation */}
-      <div className="flex items-center justify-between pb-2 border-b border-brand-border/60">
+      {/* TOP HEADER & BREADCRUMB NAVIGATION */}
+      <div className="flex items-center justify-between pb-3 border-b border-hairline">
         <button
           onClick={() => onNavigate('/dashboard')}
-          className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-cyan-400 transition-all"
+          className="flex items-center gap-1.5 text-xs text-ink-subtle hover:text-ink transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Dashboard</span>
+          <span>Back to Dashboard</span>
         </button>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <button
             disabled={currentDay <= 1}
             onClick={() => onNavigate(`/day/${currentDay - 1}`)}
-            className="p-1 rounded bg-[#12192B] border border-brand-border text-gray-400 hover:text-white disabled:opacity-30"
+            className="p-1 rounded bg-surface-1 border border-hairline text-ink-subtle hover:text-ink disabled:opacity-30"
             title="Previous Day"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
           </button>
-          <span className="font-mono text-xs text-cyan-400 font-bold">
+          <span className="font-mono text-xs text-ink font-medium">
             DAY {currentDay} OF 60
           </span>
           <button
             disabled={currentDay >= 60}
             onClick={() => onNavigate(`/day/${currentDay + 1}`)}
-            className="p-1 rounded bg-[#12192B] border border-brand-border text-gray-400 hover:text-white disabled:opacity-30"
+            className="p-1 rounded bg-surface-1 border border-hairline text-ink-subtle hover:text-ink disabled:opacity-30"
             title="Next Day"
           >
             <ArrowRight className="w-3.5 h-3.5" />
@@ -132,39 +134,41 @@ export default function ChallengeDay({ dayNum, onNavigate, onCompleteDay }) {
         </div>
       </div>
 
-      {/* Task Overview Card */}
-      <div className="glass-panel p-4 rounded-2xl border border-brand-border space-y-3">
+      {/* TASK OVERVIEW CARD */}
+      <div className="product-screenshot-card p-6 space-y-4">
         
-        {/* Track Tag & XP Reward */}
-        <div className="flex items-center justify-between">
-          <span className="text-[10px] font-bold text-cyan-400 bg-cyan-500/20 px-2.5 py-0.5 rounded-full border border-cyan-500/30 uppercase">
+        {/* Track Tag & Reward */}
+        <div className="flex items-center justify-between flex-wrap gap-2">
+          <span className="px-2.5 py-0.5 rounded-full bg-primary/20 text-primary-hover font-mono text-[11px] font-medium border border-primary/30 uppercase">
             {task.track}
           </span>
-          <div className="flex items-center gap-2 text-xs font-mono">
-            <span className="text-gray-400 flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5" /> {task.estimatedMinutes} Mins
+          <div className="flex items-center gap-4 text-xs font-mono text-ink-subtle">
+            <span className="flex items-center gap-1">
+              <Clock className="w-3.5 h-3.5 text-amber-400" /> {task.estimatedMinutes} Mins
             </span>
-            <span className="text-purple-400 font-bold flex items-center gap-0.5">
-              <Zap className="w-3.5 h-3.5" /> +{task.xpReward} XP
+            <span className="text-primary font-semibold flex items-center gap-0.5">
+              <Zap className="w-3.5 h-3.5" /> +{task.xpReward} XP Reward
             </span>
           </div>
         </div>
 
-        {/* Title & Description */}
-        <h1 className="text-lg font-extrabold text-white leading-snug font-heading">
-          {task.title}
-        </h1>
-        <p className="text-xs text-gray-300 leading-relaxed">
-          {task.overview}
-        </p>
+        {/* Task Title & Lead */}
+        <div className="space-y-1">
+          <h1 className="text-xl sm:text-2xl font-semibold text-ink tracking-headline">
+            {task.title}
+          </h1>
+          <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
+            {task.overview}
+          </p>
+        </div>
 
-        {/* Learning Objectives Checklist */}
-        <div className="bg-[#0E1526] p-3 rounded-xl border border-brand-border space-y-2">
-          <h3 className="text-xs font-bold text-gray-200 font-heading">What You Will Build Today:</h3>
-          <ul className="space-y-1.5 text-xs text-gray-300">
+        {/* Learning Objectives */}
+        <div className="linear-surface-2 p-4 rounded-lg border border-hairline-strong space-y-3">
+          <h3 className="text-xs font-semibold text-ink">What You Will Build & Deliver Today:</h3>
+          <ul className="space-y-2 text-xs text-ink-muted">
             {task.learningObjectives.map((obj, i) => (
-              <li key={i} className="flex items-start gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+              <li key={i} className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-semantic-success shrink-0 mt-0.5" />
                 <span className="leading-tight">{obj}</span>
               </li>
             ))}
@@ -173,42 +177,47 @@ export default function ChallengeDay({ dayNum, onNavigate, onCompleteDay }) {
 
       </div>
 
-      {/* Starter Code Snippet Box */}
-      <div className="glass-panel p-4 rounded-2xl border border-brand-border space-y-2">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-bold text-gray-200 font-mono">starter-code.js</span>
+      {/* STARTER CODE SNIPPET PANEL */}
+      <div className="linear-surface-1 p-6 rounded-xl border border-hairline space-y-3">
+        <div className="flex items-center justify-between text-xs font-mono">
+          <div className="flex items-center gap-2 text-ink">
+            <Terminal className="w-4 h-4 text-primary" />
+            <span>starter-code.js</span>
+          </div>
           <button
             onClick={handleCopyCode}
-            className="flex items-center gap-1 text-[11px] text-cyan-400 hover:text-cyan-300 font-mono px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/30"
+            className="flex items-center gap-1.5 text-xs text-primary hover:text-primary-hover font-mono px-3 py-1 rounded bg-surface-2 border border-hairline"
           >
-            {copiedCode ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
-            <span>{copiedCode ? 'Copied!' : 'Copy Snippet'}</span>
+            {copiedCode ? <Check className="w-3.5 h-3.5 text-semantic-success" /> : <Copy className="w-3.5 h-3.5" />}
+            <span>{copiedCode ? 'Copied!' : 'Copy Code Snippet'}</span>
           </button>
         </div>
 
-        <pre className="bg-[#060A12] p-3 rounded-xl border border-brand-border text-[11px] font-mono text-cyan-300 overflow-x-auto leading-relaxed">
-          <code>{task.starterSnippet}</code>
-        </pre>
+        <div className="bg-canvas p-4 rounded-lg border border-hairline font-mono text-xs text-ink overflow-x-auto leading-relaxed">
+          <pre className="text-[12px]">
+            <code>{task.starterSnippet}</code>
+          </pre>
+        </div>
       </div>
 
-      {/* Hint Accordion */}
-      <div className="bg-[#0D1322] border border-brand-border rounded-xl p-3">
+      {/* HINTS ACCORDION */}
+      <div className="linear-surface-1 border border-hairline rounded-lg p-4">
         <button
           onClick={() => setShowHints(!showHints)}
-          className="w-full flex items-center justify-between text-xs font-bold text-purple-300"
+          className="w-full flex items-center justify-between text-xs font-semibold text-ink"
         >
-          <span className="flex items-center gap-1.5">
-            <HelpCircle className="w-4 h-4 text-purple-400" />
+          <span className="flex items-center gap-2">
+            <HelpCircle className="w-4 h-4 text-primary" />
             <span>Need a hint or commit tip?</span>
           </span>
-          <span className="text-[10px] font-mono text-purple-400">{showHints ? 'Hide Hints' : 'Show Hints'}</span>
+          <span className="text-[11px] font-mono text-ink-subtle">{showHints ? 'Hide Hints' : 'Show Hints'}</span>
         </button>
 
         {showHints && (
-          <div className="mt-2.5 pt-2 border-t border-brand-border/40 text-xs text-gray-300 space-y-1.5">
+          <div className="mt-3 pt-3 border-t border-hairline text-xs text-ink-muted space-y-2">
             {task.hints.map((hint, idx) => (
-              <p key={idx} className="flex items-start gap-1.5">
-                <span className="text-purple-400 font-bold">•</span>
+              <p key={idx} className="flex items-start gap-2">
+                <span className="text-primary font-bold">•</span>
                 <span>{hint}</span>
               </p>
             ))}
@@ -217,142 +226,142 @@ export default function ChallengeDay({ dayNum, onNavigate, onCompleteDay }) {
       </div>
 
       {/* PROOF OF WORK SUBMISSION FORM */}
-      <div className="glass-panel-glow p-4 rounded-2xl border border-cyan-500/60 space-y-4">
+      <div className="linear-surface-2 p-6 rounded-xl border border-hairline-strong space-y-5">
         
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between border-b border-hairline pb-4">
           <div>
-            <h2 className="text-sm font-extrabold text-white flex items-center gap-1.5 font-heading">
+            <h2 className="text-base font-semibold text-ink flex items-center gap-2">
               <Flame className="w-4 h-4 text-amber-400 fill-amber-400" />
               <span>Submit Proof of Work</span>
             </h2>
-            <p className="text-[11px] text-gray-400">Push your code and post on LinkedIn to lock your streak.</p>
+            <p className="text-xs text-ink-subtle">Push your commit and post on LinkedIn to lock your day streak.</p>
           </div>
-          <span className="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-mono">
+          <span className="text-xs font-mono bg-semantic-success/20 text-semantic-success px-2.5 py-1 rounded border border-semantic-success/30">
             Day {currentDay}
           </span>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-3 text-xs">
+        <form onSubmit={handleSubmit} className="space-y-4 text-xs">
           
           {/* Field 1: GitHub Commit URL */}
-          <div className="space-y-1">
-            <label className="font-bold text-gray-300 flex items-center gap-1.5 font-heading">
-              <Github className="w-4 h-4 text-white" />
-              <span>GitHub Repository / Commit URL <span className="text-cyan-400">*</span></span>
+          <div className="space-y-1.5">
+            <label className="font-medium text-ink flex items-center gap-2">
+              <Github className="w-4 h-4 text-ink-subtle" />
+              <span>GitHub Commit URL <span className="text-primary">*</span></span>
             </label>
             <input
               type="url"
               value={githubUrl}
               onChange={(e) => setGithubUrl(e.target.value)}
               placeholder="https://github.com/username/repo/commit/hash"
-              className="w-full px-3 py-2.5 rounded-xl bg-[#080D1A] border border-brand-border focus:border-cyan-400 focus:outline-none font-mono text-xs text-cyan-300"
+              className="w-full px-3.5 py-2.5 rounded-md bg-surface-1 border border-hairline focus:border-primary-focus focus:outline-none font-mono text-xs text-ink"
               required
             />
           </div>
 
           {/* Field 2: LinkedIn Post URL */}
-          <div className="space-y-1">
-            <label className="font-bold text-gray-300 flex items-center gap-1.5 font-heading">
-              <Linkedin className="w-4 h-4 text-blue-400" />
-              <span>LinkedIn Post URL <span className="text-cyan-400">*</span></span>
+          <div className="space-y-1.5">
+            <label className="font-medium text-ink flex items-center gap-2">
+              <Linkedin className="w-4 h-4 text-primary" />
+              <span>LinkedIn Post URL <span className="text-primary">*</span></span>
             </label>
             <input
               type="url"
               value={linkedinUrl}
               onChange={(e) => setLinkedinUrl(e.target.value)}
               placeholder="https://linkedin.com/posts/username-day12-proof"
-              className="w-full px-3 py-2.5 rounded-xl bg-[#080D1A] border border-brand-border focus:border-cyan-400 focus:outline-none font-mono text-xs text-blue-300"
+              className="w-full px-3.5 py-2.5 rounded-md bg-surface-1 border border-hairline focus:border-primary-focus focus:outline-none font-mono text-xs text-ink"
               required
             />
           </div>
 
-          {/* Field 3: Reflection / Key Learning */}
-          <div className="space-y-1">
-            <label className="font-bold text-gray-300 flex items-center justify-between font-heading">
+          {/* Field 3: Reflection */}
+          <div className="space-y-1.5">
+            <label className="font-medium text-ink flex items-center justify-between">
               <span>Today's Learning Reflection (Optional)</span>
-              <span className="text-[10px] text-gray-400">Recruiters read this!</span>
+              <span className="text-[10px] text-ink-subtle">Recruiters read this</span>
             </label>
             <textarea
               rows={2}
               value={reflection}
               onChange={(e) => setReflection(e.target.value)}
-              placeholder="What was your main key takeaway or bug solved today?"
-              className="w-full px-3 py-2 rounded-xl bg-[#080D1A] border border-brand-border focus:border-cyan-400 focus:outline-none text-xs text-gray-200"
+              placeholder="What main concept or bug did you solve today?"
+              className="w-full px-3.5 py-2.5 rounded-md bg-surface-1 border border-hairline focus:border-primary-focus focus:outline-none text-xs text-ink"
             />
           </div>
 
-          {/* Thoughtful Innovation: AI Pre-flight Validator Button */}
-          <div className="pt-1">
+          {/* AI Pre-flight Validator */}
+          <div className="pt-1 space-y-2">
             <button
               type="button"
               onClick={handlePreflightValidate}
               disabled={isValidating}
-              className="w-full py-2 rounded-xl bg-[#131B2F] border border-purple-500/40 text-purple-300 hover:bg-purple-500/10 transition-all font-medium text-[11px] flex items-center justify-center gap-1.5 font-heading"
+              className="btn-secondary w-full text-xs py-2"
             >
-              <Sparkles className={`w-3.5 h-3.5 text-purple-400 ${isValidating ? 'animate-spin' : ''}`} />
-              <span>{isValidating ? 'Running AI Link Validation...' : 'Run AI Proof-of-Work Pre-flight Check'}</span>
+              <Sparkles className={`w-3.5 h-3.5 text-primary ${isValidating ? 'animate-spin' : ''}`} />
+              <span>{isValidating ? 'Running AI Validation...' : 'Run AI Proof-of-Work Pre-flight Check'}</span>
             </button>
 
             {validationResult && (
-              <div className={`mt-2 p-2.5 rounded-xl text-[11px] flex items-start gap-2 ${
+              <div className={`p-3 rounded-md text-xs flex items-start gap-2 border ${
                 validationResult.valid 
-                  ? 'bg-emerald-950/40 border border-emerald-500/60 text-emerald-300'
-                  : 'bg-amber-950/40 border border-amber-500/60 text-amber-300'
+                  ? 'bg-semantic-success/10 border-semantic-success/40 text-semantic-success'
+                  : 'bg-rose-500/10 border-rose-500/40 text-rose-300'
               }`}>
                 {validationResult.valid ? (
-                  <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 shrink-0 mt-0.5" />
                 ) : (
-                  <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
                 )}
                 <span>{validationResult.msg}</span>
               </div>
             )}
           </div>
 
-          {/* Primary Submit Button */}
+          {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-black font-extrabold text-xs shadow-glow-cyan hover:scale-[1.01] transition-all flex items-center justify-center gap-2 font-heading"
+            className="btn-primary w-full text-xs py-3"
           >
-            <CheckCircle2 className="w-4 h-4 stroke-[3]" />
-            <span>SUBMIT PROOF OF WORK & LOCK DAY STREAK</span>
+            <CheckCircle2 className="w-4 h-4" />
+            <span>Submit Proof of Work & Lock Day Streak</span>
           </button>
 
         </form>
 
       </div>
 
-      {/* Submission Success Modal */}
+      {/* SUBMISSION SUCCESS MODAL */}
       {isSubmitted && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
-          <div className="glass-panel-glow max-w-xs w-full p-5 rounded-3xl border-2 border-emerald-500/80 text-center space-y-3 animate-scale-up">
-            <div className="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/40">
-              <CheckCircle2 className="w-8 h-8 stroke-[2.5]" />
+        <div className="fixed inset-0 bg-canvas/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+          <div className="linear-surface-2 max-w-sm w-full p-6 rounded-xl border border-hairline-strong text-center space-y-4 shadow-2xl">
+            <div className="w-12 h-12 rounded-full bg-semantic-success/20 text-semantic-success flex items-center justify-center mx-auto border border-semantic-success/40">
+              <CheckCircle2 className="w-6 h-6" />
             </div>
 
-            <h2 className="text-lg font-extrabold text-white font-heading">
-              Proof of Work Verified! 🎉
-            </h2>
-            <p className="text-xs text-gray-300 leading-relaxed">
-              Congratulations! Your GitHub commit & LinkedIn post have been registered. Your streak is officially locked for Day {currentDay}!
-            </p>
+            <div className="space-y-1">
+              <h2 className="text-lg font-semibold text-ink">Proof of Work Verified! 🎉</h2>
+              <p className="text-xs text-ink-muted leading-relaxed">
+                Your GitHub commit and LinkedIn post have been registered. Your streak is officially locked for Day {currentDay}!
+              </p>
+            </div>
 
-            <div className="bg-[#0E1526] p-3 rounded-xl border border-brand-border text-left space-y-1.5">
-              <div className="text-[11px] text-cyan-400 font-mono flex items-center justify-between">
+            <div className="linear-surface-1 p-3 rounded-md border border-hairline text-left space-y-2 font-mono text-xs">
+              <div className="flex items-center justify-between text-ink">
                 <span>Streak Updated:</span>
-                <span className="font-bold text-amber-400">🔥 {currentDay} Days</span>
+                <span className="text-amber-400 font-semibold">🔥 {currentDay} Days</span>
               </div>
-              <div className="text-[11px] text-purple-400 font-mono flex items-center justify-between">
+              <div className="flex items-center justify-between text-ink">
                 <span>XP Earned:</span>
-                <span className="font-bold text-purple-300">+120 XP</span>
+                <span className="text-primary font-semibold">+120 XP</span>
               </div>
             </div>
 
             <button
               onClick={() => onNavigate('/dashboard')}
-              className="w-full py-3 rounded-xl bg-emerald-500 text-black font-extrabold text-xs shadow-glow-emerald hover:scale-[1.02] transition-all font-heading"
+              className="btn-primary w-full text-xs py-2.5"
             >
-              RETURN TO DASHBOARD
+              Return to Dashboard
             </button>
           </div>
         </div>

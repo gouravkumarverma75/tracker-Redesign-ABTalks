@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import MobileContainer from './components/MobileContainer';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard';
 import ChallengeDay from './pages/ChallengeDay';
@@ -48,7 +49,7 @@ export default function App() {
   // Render view based on route
   const renderCurrentView = () => {
     if (currentRoute === '/') {
-      return <LandingPage onNavigate={navigateTo} />;
+      return <LandingPage onNavigate={navigateTo} studentState={studentState} setStudentStateKey={setStudentStateKey} />;
     }
     
     if (currentRoute === '/dashboard') {
@@ -68,23 +69,30 @@ export default function App() {
         <ChallengeDay 
           dayNum={dayNum} 
           onNavigate={navigateTo} 
-          onCompleteDay={handleCompleteDay} 
+          onCompleteDay={handleCompleteDay}
+          studentState={studentState}
         />
       );
     }
 
     // Default Fallback
-    return <LandingPage onNavigate={navigateTo} />;
+    return <LandingPage onNavigate={navigateTo} studentState={studentState} setStudentStateKey={setStudentStateKey} />;
   };
 
   return (
-    <MobileContainer
-      currentRoute={currentRoute}
-      onNavigate={navigateTo}
-      studentState={studentState}
-      setStudentStateKey={setStudentStateKey}
-    >
-      {renderCurrentView()}
-    </MobileContainer>
+    <div className="min-h-screen bg-canvas text-ink flex flex-col selection:bg-primary/30 selection:text-ink">
+      <Navigation
+        currentRoute={currentRoute}
+        onNavigate={navigateTo}
+        studentState={studentState}
+        setStudentStateKey={setStudentStateKey}
+      />
+      
+      <main className="flex-1 w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {renderCurrentView()}
+      </main>
+
+      <Footer onNavigate={navigateTo} />
+    </div>
   );
 }
