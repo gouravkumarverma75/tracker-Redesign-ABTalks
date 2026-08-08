@@ -59,7 +59,7 @@ export const MOCK_STUDENT_PRESETS = {
     name: 'Aman Gurnani',
     college: 'ABES Engineering College',
     degree: 'B.Tech CSE DS(2nd Year)',
-    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
     trackId: 'fullstack',
     trackName: 'Full-Stack Web Engineering',
     currentStreak: 0,
