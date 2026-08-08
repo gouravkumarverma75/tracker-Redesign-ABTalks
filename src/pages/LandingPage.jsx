@@ -256,7 +256,7 @@ module.exports = router;`}
 
               <div className="space-y-2">
                 {[
-                  { rank: 1, name: 'Annu Kumari', streak: 48, xp: '5,800 XP', track: 'Full-Stack Web', avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80' },
+                  { rank: 1, name: 'Gaurav Kumar', streak: 48, xp: '5,800 XP', track: 'Full-Stack Web', avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80' },
                   { rank: 2, name: 'Aarav Sharma', streak: 42, xp: '5,100 XP', track: 'AI & Data Eng', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80' },
                   { rank: 10, name: 'Divyanshu Maurya (You)', streak: 12, xp: '1,550 XP', track: 'Full-Stack Web', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80', isUser: true },
                 ].map((st) => (
@@ -523,7 +523,7 @@ module.exports = router;`}
 
             <div className="p-3 rounded-md bg-surface-2 border border-hairline space-y-2 opacity-80">
               <div className="flex items-center justify-between">
-                <span className="font-medium text-ink">Annu Kumari • Landed ₹20 LPA</span>
+                <span className="font-medium text-ink">Gaurav Kumar • Landed ₹20 LPA</span>
                 <span className="text-semantic-success font-mono text-[11px]">✓ Placed at Unicorn</span>
               </div>
               <p className="text-[11px] text-ink-muted">

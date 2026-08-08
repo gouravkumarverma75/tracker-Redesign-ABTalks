@@ -199,9 +199,9 @@ export const MOCK_TESTIMONIALS = [
   {
     name: 'Aman Gurnani',
     college: 'ABES Engineering College',
-    placedAt: 'Landed ₹12 LPA Software Engineer Role at Tech Unicorn',
+    placedAt: 'Landed ₹18 LPA Software Engineer Role at Tech Unicorn',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-    quote: 'The ABTalks 60-day challenge helped me build a strong foundation in full-stack development. The daily tasks were challenging but rewarding, and the feedback from mentors was invaluable. I now feel confident in my skills and ready to take on real-world projects.'
+    quote: 'Building a startup while managing college was not easy, but every small step forward reminded me why I started. Discipline turned my ideas into action.'
   }
 ];
 
