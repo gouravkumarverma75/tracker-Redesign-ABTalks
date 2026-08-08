@@ -225,5 +225,9 @@ export const MOCK_FAQS = [
   {
     q: 'Will I get a certificate after completing the course?',
     a: 'yes, you will receive a certificate of completion after successfully finishing the 60-day challenge, which can be added to your LinkedIn profile and resume.'
+  },
+  {
+    q: 'Will I get mentorship or guidance during the challenge?',
+    a: 'Yes, you will have access to a community of mentors and peers who can provide guidance and support throughout the 60-day challenge.'
   }
 ];
