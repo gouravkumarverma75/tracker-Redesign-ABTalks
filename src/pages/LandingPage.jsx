@@ -256,8 +256,8 @@ module.exports = router;`}
 
               <div className="space-y-2">
                 {[
-                  { rank: 1, name: 'Gaurav Kumar', streak: 48, xp: '5,800 XP', track: 'Full-Stack Web', avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80' },
-                  { rank: 2, name: 'Aarav Sharma', streak: 42, xp: '5,100 XP', track: 'AI & Data Eng', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80' },
+                  { rank: 1, name: 'Gaurav kumar', streak: 48, xp: '5,800 XP', track: 'Full-Stack Web', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80' },
+                  { rank: 2, name: 'Aman Gurnani', streak: 42, xp: '5,100 XP', track: 'AI & Data Eng', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80' },
                   { rank: 10, name: 'Divyanshu Maurya (You)', streak: 12, xp: '1,550 XP', track: 'Full-Stack Web', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80', isUser: true },
                 ].map((st) => (
                   <div 
